@@ -1,0 +1,23 @@
+#!/bin/bash
+export ICP_ROOT=`pwd`
+export ICP_BUILDSYSTEM_PATH=$ICP_ROOT/build_system
+export ICP_ENV_DIR=$ICP_ROOT/sal/me_acceleration_layer/release_files/tlm/env_files
+export ICP_TOOLS_TARGET=accelcomp
+export ICP_CORE=ia
+export ICP_OS=linux_2.6
+export ARCH=x86_64
+export TEAM_NAME=Extended_Acceleration
+export INTEG_BUILD_OUTPUT=$ICP_ROOT/CRB_integ_modules
+export ICP_BUILD_OUTPUT=$ICP_ROOT/CRB_modules
+export ICP_OSCFLAG=linux
+export ICP_OS_MAKEFILE_SUFFIX=.linux
+export IA_DRIVER_PATH=$ICP_ROOT/sal/me_acceleration_layer/release_files/tlm
+export KERNEL_SOURCE_DIR=/lib/modules/`uname -r`/source
+export QAT_LEGACY_ALGORITHMS=y
+export CNV_STRICT_MODE=1
+export ICP_DEBUG=y
+export http_proxy=http://proxy-prc.intel.com:913
+export https_proxy=http://proxy-prc.intel.com:913
+export DEVICE=420xx
+export INTEG_FOLDER=/automation
+export DEV_BRANCH=qat_2.0_lin_protected_dev_2304
