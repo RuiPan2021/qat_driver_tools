@@ -401,7 +401,6 @@ configure_tools(){
 	sed -i '$a setopt nonomatch' ~/.zshrc
 	sed -i '$a alias tnew="tmux -f ~/.tmux.conf new-session \; split-window -h \; split-window -v \; attach"' ~/.zshrc
 	sed -i 's/^ZSH_THEME.*$/ZSH_THEME="clean"/' ~/.zshrc
-	sed -i '$a bindkey '\e\r'  forward-char' ~/.zshrc
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 	sed -i 's/^plugins.*$/plugins=(git z zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc
