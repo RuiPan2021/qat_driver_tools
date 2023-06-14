@@ -65,12 +65,8 @@ config_integ_env(){
 	make -f Makefile.user clean && make -f Makefile.user ICP_OS_LEVEL=user_space -j;
 	yes | /bin/cp -f $INTEG_BUILD_OUTPUT/* ${INTEG_FOLDER};
 
-	#copy_integ_test_file
-	cp_integ_materials
-
 	#re-install_driver
-	rm_qat;
-	insm_qat 2;
+	insm_qat integ;
 }
 #copy integ files
 cp_integ_materials(){
@@ -451,6 +447,9 @@ set_env(){
 		install_tools;
 		configure_tools;
 	elif [[ $OPTARG == 'integ' ]]; then
+		config_integ_env;
+		cp_integ_materials;
+	elif [[ $OPTARG == 'build_integ' ]]; then
 		config_integ_env;
 	elif [[ $OPTARG == 'cp_integ' ]]; then
 		cp_integ_materials;
