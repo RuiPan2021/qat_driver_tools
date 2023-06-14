@@ -398,8 +398,8 @@ configure_proxy(){
 #configure zsh and tmux
 configure_tools(){
 	echo "export PATH="${ICP_ROOT}/qat_driver_tools:$PATH"" >> ~/.zshrc
-	sed -i '$a setopt nonomatch' ~/.zshrc
-	sed -i '$a alias tnew="tmux -f ~/.tmux.conf new-session \; split-window -h \; split-window -v \; attach"' ~/.zshrc
+	echo 'setopt nonomatch' >> ~/.zshrc
+	echo 'alias tnew="tmux -f ~/.tmux.conf new-session \; split-window -h \; split-window -v \; attach"' >> ~/.zshrc
 	sed -i 's/^ZSH_THEME.*$/ZSH_THEME="clean"/' ~/.zshrc
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
