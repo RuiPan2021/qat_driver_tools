@@ -381,13 +381,14 @@ update_repos(){
 
 #configure git environment
 config_git_env(){
-	yum install git git-lfs
+	yum install git git-lfs -y
 	#configure git
 	git config --global user.name "Rui Pan"
 	git config --global user.email rui.pan@intel.com
 	unset https_proxy
 	curl -fkL https://goto.intel.com/getdt | sh
 	./dt setup
+	rm -rf ./dt
 }
 #configure_proxy
 configure_proxy(){
