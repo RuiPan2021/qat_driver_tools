@@ -434,6 +434,8 @@ install_tools(){
 	#install ohMyZsh
 	if [ ! -d ~/.oh-my-zs ]; then
 		echo "------Configuring zsh------"
+		export http_proxy=http://proxy-prc.intel.com:913
+		export https_proxy=http://proxy-prc.intel.com:913
 		wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 		chmod 777 ./install.sh
 		sh ./install.sh
