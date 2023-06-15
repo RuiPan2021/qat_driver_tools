@@ -100,12 +100,12 @@ cp_integ_materials(){
 	#unzip_file
 	echo "------unziping integration test files------"
 	cd ${INTEG_FOLDER}
-	unzip -o AdditionalCompressionInputFiles.zip
+	unzip -o -q AdditionalCompressionInputFiles.zip
 	echo AdditionalCompressionInputFiles/files_eth1/* AdditionalCompressionInputFiles/files_eth1_short/* AdditionalCompressionInputFiles/files_gmdesk/* AdditionalCompressionInputFiles/files_gmdesk_short/* | xargs /bin/cp -rft .
 	echo AdditionalCompressionInputFiles/html/* AdditionalCompressionInputFiles/*.gz | xargs /bin/cp -rft .
-	unzip -o ibm_files_64.zip;
-	unzip -o ibm_files_71.zip;
-	unzip -o ibm_files_72.zip;
+	unzip -o -q ibm_files_64.zip;
+	unzip -o -q ibm_files_71.zip;
+	unzip -o -q ibm_files_72.zip;
 }
 #run integ_test
 run_test(){
