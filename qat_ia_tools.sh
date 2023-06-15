@@ -407,9 +407,9 @@ configure_tools(){
 	if [ ! -f "~/.tmux.conf" ]; then
 		touch ~/.tmux.conf
 	fi
-	sed -i '$a set-option -g default-shell /bin/zsh' ~/.tmux.conf
-	sed -i '$a set -g mouse on' ~/.tmux.conf
-	sed -i '$a set -g default-terminal "screen-256color"' ~/.tmux.conf
+	echo 'set -g default-shell /bin/zsh' >> ~/.tmux.conf
+	echo 'set -g mouse on' >> ~/.tmux.conf
+	echo 'set -g default-terminal "screen-256color"' >> ~/.tmux.conf
 }
 #install and configure zsh and tmux
 install_tools(){
