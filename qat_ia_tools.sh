@@ -279,8 +279,9 @@ generate_pkg()
 	else
 	echo "perl check, installing perl package"
 	dnf install -y perl
+	yum install expat-devel
 	cpan -i App::cpanminus
-	cpanm XML::Parser XML::Xpath MIME::Lite XML:: Writer Switch JSON
+	cpanm XML::Parser XML::XPath MIME::Lite XML::Writer Switch JSON
 	fi
 
 	#Check the versionfile
@@ -289,7 +290,7 @@ generate_pkg()
 		mkdir -p $dir
 		echo "PACKAGE_TYPE=QAT22" | tee ${versionfile}
 		echo "PACKAGE_OS=L" | tee -a ${versionfile}
-		echo "PACKAGE_VERSION_MAJOR_NUMBER=2210" | tee -a ${versionfile}
+		echo "PACKAGE_VERSION_MAJOR_NUMBER=2304" | tee -a ${versionfile}
 		echo "PACKAGE_VERSION_MINOR_NUMBER=0" | tee -a ${versionfile}
 		echo "PACKAGE_VERSION_PATCH_NUMBER=0" | tee -a ${versionfile}
 		echo "PACKAGE_VERSION_BUILD_NUMBER=1" | tee -a ${versionfile}
@@ -427,7 +428,7 @@ install_tools(){
 	done
 
 	#install ohMyZsh
-	if [ ! -d ~/.oh-my-zs ]; then
+	if [ ! -e ~/.oh-my-zsh ]; then
 		echo "------Configuring zsh------"
 		export http_proxy=http://proxy-prc.intel.com:913
 		export https_proxy=http://proxy-prc.intel.com:913
