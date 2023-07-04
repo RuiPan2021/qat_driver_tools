@@ -92,7 +92,7 @@ cp_integ_materials(){
 	/bin/cp -rf $ICP_ROOT/sal/me_acceleration_layer/access_layer/look_aside_acceleration/integ_test/scripts/* ${INTEG_FOLDER};
 
 	echo "------copying integration test files [test_config_files]------"
-	/bin/find /integ_build/sal/me_acceleration_layer/access_layer/look_aside_acceleration/integ_test/test_config_files -type f -exec /bin/cp -f {} ${INTEG_FOLDER}/ \;
+	/bin/find $ICP_ROOT/sal/me_acceleration_layer/access_layer/look_aside_acceleration/integ_test/test_config_files -type f -exec /bin/cp -f {} ${INTEG_FOLDER}/ \;
 
 	echo "------copying integration test files [fw/driver]------"
 	/bin/cp -f $ICP_ROOT/adf/fw/*.bin ${INTEG_FOLDER};
